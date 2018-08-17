@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var timeStampLbl: UILabel!
     
+    let theme = ThemeManager.currentTheme()
+    
     fileprivate func getBitcoinPrice() -> (DataRequest) {
         return Alamofire.request("https://api.coindesk.com/v1/bpi/currentprice.json").responseJSON { (response) in
             
@@ -38,8 +40,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = theme.backgroundColor
+        
         priceLabel.text = "..."
+        priceLabel.textColor = theme.mainLabelColor
+        
         timeStampLbl.text = "..."
+        timeStampLbl.textColor = theme.commentColor
         
         getBitcoinPrice()
         
