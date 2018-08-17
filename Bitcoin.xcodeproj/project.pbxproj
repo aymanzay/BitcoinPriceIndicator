@@ -17,7 +17,7 @@
 		117601F621262E87004BDC73 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117601E821262E77004BDC73 /* Alamofire.framework */; };
 		117601F8212635DE004BDC73 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117601F7212635DE004BDC73 /* Constants.swift */; };
 		117601FA212645F5004BDC73 /* DRL Theme Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117601F9212645F5004BDC73 /* DRL Theme Manager.swift */; };
-		1D3403A5899D311C76B915F0 /* Pods_Bitcoin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AEDAFC3596147ED80F672BA /* Pods_Bitcoin.framework */; };
+		1176022F21264F9D004BDC73 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1176022C21264F6F004BDC73 /* Charts.framework */; };
 		CE9D9515AC1AA20BFCA7FB62 /* Pods_BitcoinTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A68402109B0C86EA1ABF4A7 /* Pods_BitcoinTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +78,20 @@
 			remoteGlobalIDString = E4202FE01B667AA100C997FB;
 			remoteInfo = "Alamofire watchOS";
 		};
+		1176022B21264F6F004BDC73 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1176022621264F6F004BDC73 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 65AD9E95D9ED4DC0BD73A743;
+			remoteInfo = Charts;
+		};
+		1176022D21264F6F004BDC73 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1176022621264F6F004BDC73 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1CBBC58C6CE1EBEE9852CE41;
+			remoteInfo = ChartsTests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +110,10 @@
 		117601DC21262E77004BDC73 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "../../../Downloads/Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 		117601F7212635DE004BDC73 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		117601F9212645F5004BDC73 /* DRL Theme Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DRL Theme Manager.swift"; sourceTree = "<group>"; };
+		117601FD21264C23004BDC73 /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1176020721264D4D004BDC73 /* Pods_Bitcoin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Bitcoin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1176021321264F0F004BDC73 /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1176022621264F6F004BDC73 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../../../Downloads/Charts-master/Charts.xcodeproj"; sourceTree = "<group>"; };
 		1AEDAFC3596147ED80F672BA /* Pods_Bitcoin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bitcoin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A68402109B0C86EA1ABF4A7 /* Pods_BitcoinTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BitcoinTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E7FFC0D97307FB2907B0FA2 /* Pods-BitcoinTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitcoinTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BitcoinTests/Pods-BitcoinTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -108,8 +126,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1176022F21264F9D004BDC73 /* Charts.framework in Frameworks */,
 				117601F621262E87004BDC73 /* Alamofire.framework in Frameworks */,
-				1D3403A5899D311C76B915F0 /* Pods_Bitcoin.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +165,7 @@
 		117601B821262E1E004BDC73 /* Bitcoin */ = {
 			isa = PBXGroup;
 			children = (
+				1176022621264F6F004BDC73 /* Charts.xcodeproj */,
 				117601DC21262E77004BDC73 /* Alamofire.xcodeproj */,
 				117601B921262E1E004BDC73 /* AppDelegate.swift */,
 				117601BB21262E1E004BDC73 /* ViewController.swift */,
@@ -187,10 +206,22 @@
 		117601F521262E87004BDC73 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1176021321264F0F004BDC73 /* Charts.framework */,
+				1176020721264D4D004BDC73 /* Pods_Bitcoin.framework */,
+				117601FD21264C23004BDC73 /* Charts.framework */,
 				1AEDAFC3596147ED80F672BA /* Pods_Bitcoin.framework */,
 				4A68402109B0C86EA1ABF4A7 /* Pods_BitcoinTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1176022721264F6F004BDC73 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1176022C21264F6F004BDC73 /* Charts.framework */,
+				1176022E21264F6F004BDC73 /* ChartsTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		62FF8672A2591C05D207F3C0 /* Pods */ = {
@@ -233,6 +264,7 @@
 				117601C921262E1F004BDC73 /* Sources */,
 				117601CA21262E1F004BDC73 /* Frameworks */,
 				117601CB21262E1F004BDC73 /* Resources */,
+				CBEFBCA3B54DFCEC5A9096C5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -278,6 +310,10 @@
 				{
 					ProductGroup = 117601DD21262E77004BDC73 /* Products */;
 					ProjectRef = 117601DC21262E77004BDC73 /* Alamofire.xcodeproj */;
+				},
+				{
+					ProductGroup = 1176022721264F6F004BDC73 /* Products */;
+					ProjectRef = 1176022621264F6F004BDC73 /* Charts.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -338,6 +374,20 @@
 			remoteRef = 117601F321262E77004BDC73 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		1176022C21264F6F004BDC73 /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = 1176022B21264F6F004BDC73 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1176022E21264F6F004BDC73 /* ChartsTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ChartsTests.xctest;
+			remoteRef = 1176022D21264F6F004BDC73 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -395,6 +445,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CBEFBCA3B54DFCEC5A9096C5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BitcoinTests/Pods-BitcoinTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BitcoinTests/Pods-BitcoinTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

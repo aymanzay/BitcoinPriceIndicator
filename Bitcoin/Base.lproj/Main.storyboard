@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,41 +15,50 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Bitcoin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$10,000.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tai-7d-5tT">
-                                <rect key="frame" x="28" y="77" width="318" height="36"/>
+                                <rect key="frame" x="28" y="101" width="318" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OSz-Dw-PrX">
-                                <rect key="frame" x="28" y="121" width="318" height="23"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Updated time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OSz-Dw-PrX">
+                                <rect key="frame" x="28" y="145" width="318" height="23"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BbO-F6-1JF" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="222" width="375" height="357"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="BbO-F6-1JF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4NW-wv-Yhh"/>
+                            <constraint firstItem="BbO-F6-1JF" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Iwg-kX-BBl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="BbO-F6-1JF" secondAttribute="bottom" constant="199" id="OyX-qX-fNC"/>
                             <constraint firstItem="tai-7d-5tT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="28" id="Pfi-sw-pt9"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tai-7d-5tT" secondAttribute="trailing" constant="29" id="Stn-Mb-0pC"/>
                             <constraint firstItem="tai-7d-5tT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="57" id="TM9-Bm-kiS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OSz-Dw-PrX" secondAttribute="trailing" constant="29" id="WTb-A9-7fF"/>
+                            <constraint firstItem="BbO-F6-1JF" firstAttribute="top" secondItem="OSz-Dw-PrX" secondAttribute="bottom" constant="54" id="XLV-Xq-ZHt"/>
                             <constraint firstItem="OSz-Dw-PrX" firstAttribute="top" secondItem="tai-7d-5tT" secondAttribute="bottom" constant="8" id="bzL-xp-SJp"/>
                             <constraint firstItem="OSz-Dw-PrX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="28" id="n4k-Bl-Pf2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="graphView" destination="BbO-F6-1JF" id="XhK-Og-hPT"/>
                         <outlet property="priceLabel" destination="tai-7d-5tT" id="UWC-7N-zTm"/>
                         <outlet property="timeStampLbl" destination="OSz-Dw-PrX" id="vA3-wW-XV2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+            <point key="canvasLocation" x="136.80000000000001" y="133.00492610837438"/>
         </scene>
     </scenes>
 </document>
