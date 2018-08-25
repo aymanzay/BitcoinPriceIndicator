@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import Charts
+import SwiftyBeaver
 
 class ViewController: UIViewController {
 
@@ -19,11 +20,13 @@ class ViewController: UIViewController {
     
     let theme = ThemeManager.currentTheme()
     
+    let log = SwiftyBeaver.self
+    
     var dates:[String] = []
     var prices:[NSNumber] = []
     
-    fileprivate func getBitcoinPrice() -> (DataRequest) {
-        return Alamofire.request("https://api.coindesk.com/v1/bpi/currentprice.json").responseJSON { (response) in
+    fileprivate func getBitcoinPrice() {
+        Alamofire.request("https://api.coindesk.com/v1/bpi/currentprice.json").responseJSON { (response) in
             
             if let bitcoinJSON = response.result.value {
                 let bitcoinObject:Dictionary = bitcoinJSON as! Dictionary<String, Any>
@@ -43,8 +46,8 @@ class ViewController: UIViewController {
         }
     }
     
-    fileprivate func getBitcoinPriceHistory() -> (DataRequest){
-        return Alamofire.request("https://api.coindesk.com/v1/bpi/historical/close.json").responseJSON(completionHandler: { (response) in
+    fileprivate func getBitcoinPriceHistory(){
+        Alamofire.request("https://api.coindesk.com/v1/bpi/historical/close.json").responseJSON(completionHandler: { (response) in
             
             if let historyJSON = response.result.value {
                 let historyObject:Dictionary = historyJSON as! Dictionary<String, Any>
@@ -65,10 +68,9 @@ class ViewController: UIViewController {
     
     func setChartValues(_ count : Int = 20) {
         let values = (0..<count).map { (i) -> ChartDataEntry in
-            return ChartDataEntry(x: Double(i), y: Double(prices[i]))
+            return ChartDataEntry(x: Double(i), y: Double(truncating: prices[i]))
         }
         
-
         graphView.dragEnabled = true
         graphView.setScaleEnabled(true)
         graphView.pinchZoomEnabled = false

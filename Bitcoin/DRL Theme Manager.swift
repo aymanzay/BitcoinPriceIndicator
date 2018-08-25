@@ -23,7 +23,7 @@ enum Theme: Int {
     var barStyle: UIBarStyle {
         switch self {
         case .Graphical:
-            return .default
+            return .blackOpaque
         case .Dark:
             return .black
         }
@@ -58,6 +58,23 @@ enum Theme: Int {
     var fuchsiaColor: UIColor {
         return  UIColor(red:0.72, green:0.22, blue:0.60, alpha:1.0)
     }
+    
+    /// RedColor
+    var redColor: UIColor {
+        return UIColor(red: 0.8, green: 0.22, blue: 0.3, alpha: 1.0)
+    }
+    
+    /// SectionHeaderColor
+    var sectionHeaderColor: UIColor {
+        return UIColor(red: 0.10, green: 0.10, blue: 0.14, alpha: 1.0)
+    }
+    
+    /// DarkgGrayColor
+    var grayColor: UIColor {
+        return UIColor(red: 50/255, green: 50/255, blue: 50/255, alpha: 1.0)
+    }
+    
+    
 }
 
 /// Enum declaration

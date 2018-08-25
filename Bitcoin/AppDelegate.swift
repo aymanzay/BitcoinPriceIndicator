@@ -8,17 +8,57 @@
 
 import UIKit
 import CoreData
+import SwiftyBeaver
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    let log = SwiftyBeaver.self
+    
+    private func initialViewController() -> UIViewController {
+        return UIStoryboard(name: "FullCoinList", bundle: nil).instantiateViewController(withIdentifier: "coinListVCID")
+    }
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.makeKeyAndVisible()
+
+        let layout = UICollectionViewFlowLayout()
+//        layout.scrollDirection = .horizontal
+        window?.rootViewController = UINavigationController(rootViewController: initialViewController())//UINavigationController(rootViewController: FullCoinVC (collectionViewLayout: layout))
+        
         let theme = ThemeManager.currentTheme()
         ThemeManager.applyTheme(theme: theme)
+        
+        UINavigationBar.appearance().barTintColor = theme.sectionHeaderColor
+        
+        
+        // add log destinations. at least one is needed!
+        let console = ConsoleDestination()  // log to Xcode Console
+        let file = FileDestination()  // log to default swiftybeaver.log file
+        log.addDestination(console)
+        log.addDestination(file)
+        
+        let platform = SBPlatformDestination(appID: "QxnpYA", appSecret: "qPv45k7C5u6jzgfwz0UzUog9Ln8zmk2g", encryptionKey: "vhznwnxdtk3vlqvlYwPuPxSqhQdYe7pd")
+        log.addDestination(platform)
+        
+        application.statusBarStyle = .lightContent
+        
+        //get rid of shadow image
+        UINavigationBar.appearance().shadowImage = UIImage()
+        UINavigationBar.appearance().backgroundColor = theme.backgroundColor
+        
+//        let statusBarBackgroundView = UIView()
+//        statusBarBackgroundView.backgroundColor = theme.backgroundColor
+//        window?.addSubview(statusBarBackgroundView)
+//        print("adding constraints")
+//
+//        window?.addConstraintsWithFormat(format: "H:|[v0]|", views: statusBarBackgroundView)
+//        window?.addConstraintsWithFormat(format: "V:|[v0(30)]", views: statusBarBackgroundView)
         
         return true
     }
